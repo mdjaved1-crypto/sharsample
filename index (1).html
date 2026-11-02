@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Concept website prepared for Shar Medical Clinic — illustrative demo. Book a dental appointment in Mishrifah, Jeddah.">
+<title>Shar Medical Clinic — Concept Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10302e;--muted:#5d716e;--bg:#f7f5f0;--surface:#fff;--soft:#e8f1ec;--line:#dbe4df;
+  --teal:#0f6a64;--teal-d:#0a4a46;--teal-l:#d9efe6;--gold:#c9a15a;--wa:#1faa59;--wa-d:#168a47;
+  --danger:#b3412f;--r:20px;--shadow:0 18px 50px rgba(16,48,46,.12);
+  --font:"IBM Plex Sans Arabic","Segoe UI","SF Arabic","Noto Sans Arabic",Tahoma,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+img,svg{max-width:100%}
+.container{width:min(1160px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* demo label */
+.demo-bar{background:#0c2a28;color:#e9f6ef;text-align:center;font-size:13px;padding:8px 16px;line-height:1.5}
+.demo-bar b{color:var(--gold);font-weight:600}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;line-height:1.2}
+.brand-mark{width:42px;height:42px;border-radius:13px;background:var(--teal);display:grid;place-items:center;flex:none}
+.brand-mark svg{width:24px;height:24px}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.nav-links{display:flex;gap:26px;font-size:15px;color:#3f5754}
+.nav-links a:hover{color:var(--teal)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.lang{border:1px solid var(--line);background:#fff;padding:7px 14px;border-radius:999px;font-weight:600;color:var(--teal-d);min-height:40px}
+.menu-btn{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:12px;background:#fff;place-items:center}
+.menu-btn span,.menu-btn span:before,.menu-btn span:after{display:block;width:18px;height:2px;background:var(--teal-d);border-radius:2px;position:relative;content:""}
+.menu-btn span:before{position:absolute;top:-6px}.menu-btn span:after{position:absolute;top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;transition:.18s;min-height:46px;text-align:center}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 24px rgba(15,106,100,.22)}
+.btn-primary:hover{background:var(--teal-d);transform:translateY(-1px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-d)}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--teal-d)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* hero */
+.hero{padding:56px 0 64px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--teal);font-size:14px;font-weight:600;margin-bottom:14px}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.3;margin:0 0 18px;font-weight:700}
+h1 em{font-style:normal;color:var(--teal)}
+html[lang=en] h1{line-height:1.12;letter-spacing:-.02em}
+h2{font-size:clamp(26px,3.4vw,38px);line-height:1.3;margin:0;font-weight:700}
+html[lang=en] h2{line-height:1.15;letter-spacing:-.015em}
+h3{margin:0;font-weight:600}
+.lead{font-size:18px;color:var(--muted);max-width:560px;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-chips{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:14px}
+.hero-chips span{display:inline-flex;gap:8px;align-items:center}
+.hero-chips i{width:20px;height:20px;border-radius:50%;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
+
+/* hero phone mock */
+.hero-art{position:relative;min-height:540px;display:grid;place-items:center;padding-block:60px 40px}
+.hero-art:before{content:"";position:absolute;inset:0;border-radius:36px;background:linear-gradient(150deg,#dff1e8,#b9dccf)}
+.hero-art:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.45);inset-block-start:-90px;inset-inline-end:-70px}
+.phone{position:relative;z-index:1;width:262px;background:#fff;border-radius:34px;padding:12px;box-shadow:0 30px 60px rgba(10,74,70,.28);border:6px solid #14312f;direction:inherit}
+.phone-screen{border-radius:22px;background:var(--bg);padding:16px 14px 16px;min-height:410px}
+.ph-top{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-weight:700;font-size:13px}
+.ph-top i{width:22px;height:22px;border-radius:8px;background:var(--teal);display:block}
+.ph-prog{display:flex;gap:4px;margin-bottom:14px}
+.ph-prog b{height:4px;flex:1;border-radius:4px;background:var(--line)}
+.ph-prog b.on{background:var(--teal)}
+.ph-q{font-size:13px;font-weight:600;margin-bottom:10px}
+.ph-opt{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:12px;margin-bottom:7px}
+.ph-opt.sel{border-color:var(--teal);background:var(--teal-l);font-weight:600}
+.ph-opt i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.ph-opt.sel i{background:var(--teal)}
+.ph-wa{margin-top:12px;background:var(--wa);color:#fff;border-radius:12px;text-align:center;padding:10px;font-size:12px;font-weight:600}
+.float-card{position:absolute;z-index:2;background:#fff;border-radius:16px;box-shadow:0 14px 34px rgba(10,74,70,.18);padding:10px 14px;font-size:13px;font-weight:600;display:flex;gap:9px;align-items:center}
+.float-card i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px}
+.fc1{inset-block-start:18px;inset-inline-start:14px}.fc1 i{background:var(--teal-l);color:var(--teal)}
+.fc2{inset-block-end:16px;inset-inline-end:14px}.fc2 i{background:#fbefd6;color:#8a6a28}
+
+/* sections */
+.section{padding:78px 0}
+.soft{background:var(--soft)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.section-head p{margin:0;color:var(--muted);max-width:480px}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.why-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--teal)}
+.why-num{width:44px;height:44px;border-radius:14px;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px}
+.why-card h3{font-size:20px;line-height:1.4}
+.why-card p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.why-card a{color:var(--teal);font-weight:600;font-size:14px}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.service{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;text-align:start;transition:.2s;display:flex;flex-direction:column;gap:8px;min-height:210px}
+.service:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
+.s-ic{width:46px;height:46px;border-radius:14px;background:var(--teal-l);display:grid;place-items:center}
+.s-ic svg{width:26px;height:26px}
+.service p{margin:0;color:var(--muted);font-size:14px;line-height:1.6;flex:1}
+.service .go{color:var(--teal);font-weight:600;font-size:14px}
+
+/* booking */
+.book-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start}
+.book-side p{color:var(--muted)}
+.book-side ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.book-side li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.book-side li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-style:normal;display:grid;place-items:center;font-size:13px;font-weight:700}
+.wizard{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow)}
+.w-prog{display:flex;gap:6px;margin-bottom:6px}
+.w-prog b{flex:1;height:5px;border-radius:5px;background:var(--line);transition:.3s}
+.w-prog b.on{background:var(--teal)}
+.w-step-label{font-size:13px;color:var(--muted);margin-bottom:16px}
+.w-title{font-size:22px;margin-bottom:16px}
+.opt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opt{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px;text-align:start;display:flex;gap:10px;align-items:center;min-height:56px;transition:.15s;font-weight:500}
+.opt:hover{border-color:var(--teal)}
+.opt[aria-pressed=true]{border-color:var(--teal);background:var(--teal-l);font-weight:600}
+.opt small{display:block;font-weight:400;color:var(--muted);font-size:12px;line-height:1.4}
+.opt .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+.opt[aria-pressed=true] .dot{border-color:var(--teal);background:var(--teal)}
+.opt[aria-pressed=true] .dot:after{content:"";width:6px;height:6px;background:#fff;border-radius:50%}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.day{border:1.5px solid var(--line);border-radius:14px;padding:9px 6px;text-align:center;font-size:13px;line-height:1.35;background:#fff}
+.day b{display:block;font-size:18px}
+.day[aria-pressed=true]{border-color:var(--teal);background:var(--teal);color:#fff}
+.day[disabled]{opacity:.45;cursor:not-allowed;background:#f1f1ee}
+.slot-title{font-size:13px;font-weight:600;color:var(--muted);margin:10px 0 8px}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slot{border:1.5px solid var(--line);border-radius:12px;padding:9px 4px;font-size:14px;text-align:center;background:#fff;direction:ltr}
+.slot[aria-pressed=true]{border-color:var(--teal);background:var(--teal);color:#fff}
+.slot[disabled]{text-decoration:line-through;opacity:.4;cursor:not-allowed}
+.fields{display:grid;gap:12px;margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:14px;margin-bottom:5px}
+.field input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fcfdfc;min-height:48px}
+.field input:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(15,106,100,.15)}
+.field input[aria-invalid=true]{border-color:var(--danger)}
+.err{color:var(--danger);font-size:13px;margin-top:4px;min-height:0}
+.summary{background:var(--bg);border-radius:16px;padding:14px 16px;display:grid;gap:6px;font-size:14px;margin-bottom:16px}
+.summary div{display:flex;justify-content:space-between;gap:12px}
+.summary span{color:var(--muted)}
+.summary b{font-weight:600;text-align:end}
+.w-nav{display:flex;gap:10px;justify-content:space-between;margin-top:20px}
+.w-nav .btn{flex:0 1 auto}
+.w-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+.w-done{text-align:center;padding:12px 0}
+.w-done .check{width:60px;height:60px;border-radius:50%;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;margin:0 auto 14px;font-size:28px}
+
+/* doctors */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500}
+.chip[aria-pressed=true]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.doctors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.doctor{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:6px}
+.doctor[hidden]{display:none}
+.avatar{width:84px;height:84px;border-radius:50%;margin-bottom:8px;overflow:hidden;background:var(--teal-l);position:relative}
+.avatar svg{width:100%;height:100%}
+.badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:999px;background:#fbefd6;color:#7a5c1f;font-weight:600;align-self:flex-start}
+.doctor p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.doctor .meta{font-size:13px;color:var(--teal-d);margin-top:4px}
+.doctor .btn{margin-top:12px;align-self:flex-start;padding:9px 18px;min-height:40px;font-size:14px}
+
+/* trust */
+.trust-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:24px}
+.rating{background:var(--teal-d);color:#eefaf4;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.stars{color:var(--gold);letter-spacing:3px;font-size:22px;direction:ltr}
+.rating p{margin:0;color:#bfe0d2;font-size:14px}
+.rating h3{font-size:22px;line-height:1.5}
+.reviews{display:grid;gap:14px}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.review p{margin:6px 0 10px}
+.review small{color:var(--muted)}
+.indicators{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.ind{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.ind b{display:block;color:var(--teal);margin-bottom:4px}
+.ind span{font-size:14px;color:var(--muted);line-height:1.6;display:block}
+
+/* before/after */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.ba{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:2/1.15;background:#f3e6e3;direction:ltr;box-shadow:var(--shadow);--pos:50%;user-select:none;touch-action:pan-y}
+.ba svg{position:absolute;inset:0;width:100%;height:100%}
+.ba .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-handle{position:absolute;inset-block:0;left:var(--pos);width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.ba-handle:after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);display:grid;place-items:center;color:var(--teal-d);font-weight:700}
+.ba-tag{position:absolute;top:12px;padding:4px 12px;border-radius:999px;background:rgba(10,42,40,.75);color:#fff;font-size:12px;font-weight:600}
+.ba-tag.l{left:12px}.ba-tag.r{right:12px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-copy p{color:var(--muted)}
+.ba-copy .note{font-size:13px;background:#fbefd6;color:#6e531b;border-radius:12px;padding:10px 14px;margin-top:14px}
+
+/* location */
+.loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+.map{position:relative;min-height:380px;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:#dcece4}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map svg.fallback{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;inset:auto;z-index:0}
+.addr{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px}
+.addr .row{display:flex;gap:12px;margin:14px 0;font-size:15px}
+.addr .row i{flex:none;width:34px;height:34px;border-radius:11px;background:var(--teal-l);display:grid;place-items:center;font-style:normal;color:var(--teal);font-weight:700}
+.hours{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 4px}
+.hours td{padding:5px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:end;direction:ltr}
+.addr .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.tbc{font-size:12px;color:#7a5c1f;background:#fbefd6;border-radius:8px;padding:4px 10px;display:inline-block;margin-top:6px}
+.seo-note{margin-top:22px;font-size:14px;color:var(--muted)}
+
+.footer{padding:34px 0 120px;font-size:13px;color:var(--muted)}
+.footer-inner{border-top:1px solid var(--line);padding-top:22px;display:grid;gap:6px}
+.footer b{color:var(--ink)}
+
+/* mobile sticky bar */
+.sticky-bar{display:none}
+.toast{position:fixed;inset-inline:16px;bottom:90px;margin-inline:auto;max-width:420px;background:#10302e;color:#fff;border-radius:14px;padding:12px 16px;font-size:14px;z-index:40;opacity:0;pointer-events:none;transition:.25s;transform:translateY(8px);text-align:center}
+.toast.show{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .services{grid-template-columns:repeat(3,1fr)}
+  .indicators{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr}
+}
+@media(max-width:860px){
+  .nav-links{position:absolute;inset-inline:0;top:72px;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px 18px;flex-direction:column;gap:2px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 4px;font-size:16px;border-bottom:1px solid var(--line)}
+  .menu-btn{display:grid}
+  .nav-actions .btn{display:none}
+  .hero{padding-top:34px}
+  .hero-grid,.book-wrap,.trust-grid,.ba-grid,.loc-grid{grid-template-columns:1fr}
+  .hero-art{min-height:470px;order:2}
+  .doctors{grid-template-columns:repeat(2,1fr)}
+  .section{padding:56px 0}
+}
+@media(max-width:600px){
+  .container{width:min(100% - 32px,1160px)}
+  .lead{font-size:16px}
+  .hero-actions .btn{flex:1 1 100%}
+  .services{grid-template-columns:1fr 1fr}
+  .service{min-height:0;padding:18px 14px}
+  .doctors,.opt-grid{grid-template-columns:1fr}
+  .indicators{grid-template-columns:1fr}
+  .wizard{padding:20px 16px;border-radius:22px}
+  .days{grid-template-columns:repeat(4,1fr)}
+  .slots{grid-template-columns:repeat(3,1fr)}
+  .hero-art{min-height:430px}
+  .fc1{inset-inline-start:2px}.fc2{inset-inline-end:2px}
+  .sticky-bar{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:8px;position:fixed;inset-inline:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(247,245,240,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .sticky-bar .btn{padding:10px 6px;font-size:14px;min-height:46px}
+  .toast{bottom:84px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar"><span data-ar="تصور موقع أعدّ لعيادة شار الطبية — نموذج توضيحي" data-en="Concept website prepared for Shar Medical Clinic — illustrative demo">تصور موقع أعدّ لعيادة شار الطبية — نموذج توضيحي</span></div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Shar">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c-2.3 0-4 1.8-4 4.2 0 2 1 3.5 1.6 5.2.6 1.8.9 4.6 2.2 6.6.5.8 1.5.8 1.9-.1.6-1.3.6-3.4 1.3-4.4.5-.7 1.5-.7 2 0 .7 1 .7 3.1 1.3 4.4.4.9 1.4.9 1.9.1 1.3-2 1.6-4.8 2.2-6.6C20 11.700 21 10.200 21 8.200 21 5.800 19.300 4 17 4c-2 0-3 1-5 1S9 4 7 4Z"/></svg></span>
+      <span><span data-ar="عيادة شار الطبية" data-en="Shar Medical Clinic">عيادة شار الطبية</span><small data-ar="فرع مشرفة · جدة" data-en="Mishrifah branch · Jeddah">فرع مشرفة · جدة</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main">
+      <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
+      <a href="#doctors" data-ar="الأطباء" data-en="Doctors">الأطباء</a>
+      <a href="#trust" data-ar="آراء المرضى" data-en="Reviews">آراء المرضى</a>
+      <a href="#mishrifah" data-ar="فرع مشرفة" data-en="Mishrifah">فرع مشرفة</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <a class="btn btn-primary" href="#book" data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow" data-ar="عيادة أسنان في مشرفة، جدة" data-en="Dental care in Mishrifah, Jeddah">عيادة أسنان في مشرفة، جدة</div>
+        <h1 data-ar="اختر علاجك، واعرف طبيبك، <em>واحجز موعدك من جوالك</em>" data-en="Choose your treatment, meet your doctor, <em>and book from your phone</em>">اختر علاجك، واعرف طبيبك، <em>واحجز موعدك من جوالك</em></h1>
+        <p class="lead" data-ar="زراعة وتقويم وأسنان أطفال وتجميل وعلاج جذور — وخطوات حجز واضحة تنتهي برسالة جاهزة على واتساب." data-en="Implants, braces, children’s care, cosmetic dentistry and root canals — with a clear booking path that ends in a ready-made WhatsApp message.">زراعة وتقويم وأسنان أطفال وتجميل وعلاج جذور — وخطوات حجز واضحة تنتهي برسالة جاهزة على واتساب.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#book"><span data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</span> <span aria-hidden="true">/ <span data-ar="Book Appointment" data-en="احجز موعدك">Book Appointment</span></span></a>
+          <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2Zm5.200 14.100c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500.2.600.8 2 .8 2.100.1.100.1.300 0 .5l-.3.500c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1.200-.2.700-.8.900-1.100.2-.3.400-.2.600-.1l2 1c.3.100.5.200.5.300.1.200.1.700-.1 1.200Z"/></svg><span data-ar="واتساب" data-en="WhatsApp">واتساب</span></a>
+        </div>
+        <div class="hero-chips">
+          <span><i>✓</i><span data-ar="عربي وإنجليزي" data-en="Arabic & English">عربي وإنجليزي</span></span>
+          <span><i>✓</i><span data-ar="الحجز في أقل من دقيقة" data-en="Book in under a minute">الحجز في أقل من دقيقة</span></span>
+          <span><i>✓</i><span data-ar="تأكيد عبر واتساب" data-en="Confirmation on WhatsApp">تأكيد عبر واتساب</span></span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="float-card fc1"><i>✓</i><span data-ar="اختيار الخدمة أولاً" data-en="Pick the treatment first">اختيار الخدمة أولاً</span></div>
+        <div class="phone"><div class="phone-screen">
+          <div class="ph-top"><i></i><span data-ar="احجز موعدك" data-en="Book appointment">احجز موعدك</span></div>
+          <div class="ph-prog"><b class="on"></b><b class="on"></b><b></b><b></b></div>
+          <div class="ph-q" data-ar="من تفضّل من الأطباء؟" data-en="Who would you like to see?">من تفضّل من الأطباء؟</div>
+          <div class="ph-opt sel"><i></i><span data-ar="أخصائي زراعة الأسنان" data-en="Implant specialist">أخصائي زراعة الأسنان</span></div>
+          <div class="ph-opt"><i></i><span data-ar="لا تفضيل — الأقرب موعداً" data-en="No preference — soonest">لا تفضيل — الأقرب موعداً</span></div>
+          <div class="ph-q" style="margin-top:14px" data-ar="الموعد المناسب" data-en="Preferred time">الموعد المناسب</div>
+          <div class="ph-opt sel"><i></i><span dir="ltr">Sat · 5:30 PM</span></div>
+          <div class="ph-wa" data-ar="إرسال الطلب عبر واتساب" data-en="Send request on WhatsApp">إرسال الطلب عبر واتساب</div>
+        </div></div>
+        <div class="float-card fc2"><i>★</i><span data-ar="رسالة جاهزة لفريق العيادة" data-en="Pre-filled for the clinic team">رسالة جاهزة لفريق العيادة</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow" data-ar="لماذا شار؟" data-en="Why Shar">لماذا شار؟</div><h2 data-ar="لماذا يختار المرضى شار" data-en="Why patients choose Shar">لماذا يختار المرضى شار</h2></div>
+        <p data-ar="ثلاث نتائج يلمسها المريض من أول زيارة للموقع." data-en="Three outcomes patients feel from their first visit to the site.">ثلاث نتائج يلمسها المريض من أول زيارة للموقع.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card"><span class="why-num">1</span><h3 data-ar="إرشاد واضح للعلاج" data-en="Clear treatment guidance">إرشاد واضح للعلاج</h3><p data-ar="كل خدمة تُشرح بلغة بسيطة: لمن هي، وما الخطوة التالية — فيعرف المريض ما يحتاجه قبل أن يتصل." data-en="Every treatment is explained in plain language: who it’s for and what happens next — so patients know what they need before they call.">كل خدمة تُشرح بلغة بسيطة: لمن هي، وما الخطوة التالية — فيعرف المريض ما يحتاجه قبل أن يتصل.</p><a href="#services" data-ar="تصفح الخدمات ←" data-en="Browse treatments →">تصفح الخدمات ←</a></article>
+        <article class="why-card"><span class="why-num">2</span><h3 data-ar="أخصائيون لكل خدمة" data-en="Specialists by service">أخصائيون لكل خدمة</h3><p data-ar="يرى المريض الأخصائي المناسب لحالته — زراعة، تقويم، أطفال، تجميل أو علاج جذور — بدل اختيار اسم لا يعرفه." data-en="Patients see the right specialist for their case — implants, orthodontics, children, cosmetic or root canal — instead of picking a name blindly.">يرى المريض الأخصائي المناسب لحالته — زراعة، تقويم، أطفال، تجميل أو علاج جذور — بدل اختيار اسم لا يعرفه.</p><a href="#doctors" data-ar="تعرّف على التخصصات ←" data-en="Meet the specialties →">تعرّف على التخصصات ←</a></article>
+        <article class="why-card"><span class="why-num">3</span><h3 data-ar="طلب موعد أسرع" data-en="Faster appointment requests">طلب موعد أسرع</h3><p data-ar="أربع خطوات من الجوال تنتهي برسالة واتساب جاهزة، فيصل للفريق الطلب كاملاً من أول رسالة." data-en="Four steps on a phone ending in a ready WhatsApp message, so the team receives the full request in the first message.">أربع خطوات من الجوال تنتهي برسالة واتساب جاهزة، فيصل للفريق الطلب كاملاً من أول رسالة.</p><a href="#book" data-ar="اطلب موعدك ←" data-en="Request an appointment →">اطلب موعدك ←</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section soft" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow" data-ar="الخدمات" data-en="Treatments">الخدمات</div><h2 data-ar="ابدأ من احتياجك" data-en="Start with what you need">ابدأ من احتياجك</h2></div>
+        <p data-ar="اضغط على أي خدمة لبدء الحجز بها مباشرة." data-en="Tap any treatment to start your booking with it already selected.">اضغط على أي خدمة لبدء الحجز بها مباشرة.</p>
+      </div>
+      <div class="services" id="serviceCards"></div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section" id="book">
+    <div class="container book-wrap">
+      <div class="book-side">
+        <div class="eyebrow" data-ar="احجز موعدك" data-en="Book appointment">احجز موعدك</div>
+        <h2 data-ar="أربع خطوات، وتصلك رسالة جاهزة" data-en="Four steps, one ready-made message">أربع خطوات، وتصلك رسالة جاهزة</h2>
+        <p data-ar="بدل الاتصال والانتظار: يختار المريض الخدمة والطبيب والوقت، ثم يرسل الطلب لفريق العيادة على واتساب بكل التفاصيل." data-en="Instead of calling and waiting: the patient picks the treatment, doctor and time, then sends the full request to the clinic team on WhatsApp.">بدل الاتصال والانتظار: يختار المريض الخدمة والطبيب والوقت، ثم يرسل الطلب لفريق العيادة على واتساب بكل التفاصيل.</p>
+        <ul>
+          <li><i>1</i><span data-ar="الفريق يعرف الخدمة المطلوبة قبل أن يردّ" data-en="The team knows the treatment before replying">الفريق يعرف الخدمة المطلوبة قبل أن يردّ</span></li>
+          <li><i>2</i><span data-ar="الطبيب يُقترح حسب التخصص" data-en="Doctors are suggested by specialty">الطبيب يُقترح حسب التخصص</span></li>
+          <li><i>3</i><span data-ar="لا نماذج طويلة ولا بيانات طبية حساسة" data-en="No long forms, no sensitive medical details">لا نماذج طويلة ولا بيانات طبية حساسة</span></li>
+        </ul>
+      </div>
+      <div class="wizard" id="wizard" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="section soft" id="doctors">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow" data-ar="الفريق الطبي" data-en="Medical team">الفريق الطبي</div><h2 data-ar="اعرف من سيعالجك" data-en="Know who will treat you">اعرف من سيعالجك</h2></div>
+        <p data-ar="ملفات توضيحية فقط — تُستبدل بأطباء العيادة وصورهم بعد موافقتهم الخطية." data-en="Illustrative profiles only — replaced with the clinic’s doctors and photos after their written approval.">ملفات توضيحية فقط — تُستبدل بأطباء العيادة وصورهم بعد موافقتهم الخطية.</p>
+      </div>
+      <div class="chips" id="docChips" role="group" aria-label="Specialty"></div>
+      <div class="doctors" id="docCards"></div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="section" id="trust">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow" data-ar="الثقة" data-en="Trust">الثقة</div><h2 data-ar="آراء المرضى ومؤشرات الثقة" data-en="Patient voices and trust signals">آراء المرضى ومؤشرات الثقة</h2></div>
+      </div>
+      <div class="trust-grid">
+        <div class="rating">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <h3 data-ar="هنا يظهر تقييم Google الحقيقي وعدد المراجعات من صفحة العيادة" data-en="The clinic’s live Google rating and review count appear here">هنا يظهر تقييم Google الحقيقي وعدد المراجعات من صفحة العيادة</h3>
+          <p data-ar="في النسخة الفعلية يُسحب الرقم من Google ويُحدَّث تلقائياً — لا نعرض رقماً غير موثّق." data-en="In the real site this is pulled from Google and kept current — no unverified numbers.">في النسخة الفعلية يُسحب الرقم من Google ويُحدَّث تلقائياً — لا نعرض رقماً غير موثّق.</p>
+        </div>
+        <div class="reviews">
+          <article class="review"><div class="stars" aria-hidden="true">★★★★★</div><p data-ar="«شرحوا لي الخطة قبل البدء، وكان الحجز عن طريق واتساب سريعاً.»" data-en="“They explained the plan before we started, and booking by WhatsApp was quick.”">«شرحوا لي الخطة قبل البدء، وكان الحجز عن طريق واتساب سريعاً.»</p><small data-ar="مثال توضيحي — يُستبدل برأي مريض معتمد" data-en="Sample text — replace with an approved patient review">مثال توضيحي — يُستبدل برأي مريض معتمد</small></article>
+          <article class="review"><div class="stars" aria-hidden="true">★★★★★</div><p data-ar="«الطبيب تعامل مع ابني بهدوء وخرج مرتاحاً.»" data-en="“The doctor was calm with my son and he left relaxed.”">«الطبيب تعامل مع ابني بهدوء وخرج مرتاحاً.»</p><small data-ar="مثال توضيحي — يُستبدل برأي مريض معتمد" data-en="Sample text — replace with an approved patient review">مثال توضيحي — يُستبدل برأي مريض معتمد</small></article>
+        </div>
+      </div>
+      <div class="indicators">
+        <div class="ind"><b data-ar="عربي · English" data-en="العربية · English">عربي · English</b><span data-ar="موقع وفريق يخدمان المريض بلغته" data-en="A site and team that serve patients in their language">موقع وفريق يخدمان المريض بلغته</span></div>
+        <div class="ind"><b data-ar="خطة قبل العلاج" data-en="Plan before treatment">خطة قبل العلاج</b><span data-ar="تُعرض الخطوات التالية بوضوح بعد الاستشارة" data-en="Next steps explained clearly after the consultation">تُعرض الخطوات التالية بوضوح بعد الاستشارة</span></div>
+        <div class="ind"><b data-ar="تأكيد سريع" data-en="Fast confirmation">تأكيد سريع</b><span data-ar="رسالة واتساب جاهزة بدل الانتظار على الهاتف" data-en="A ready WhatsApp message instead of waiting on the phone">رسالة واتساب جاهزة بدل الانتظار على الهاتف</span></div>
+        <div class="ind"><b data-ar="بيانات موثّقة" data-en="Verified details">بيانات موثّقة</b><span data-ar="الأطباء والساعات والأسعار بموافقة العيادة فقط" data-en="Doctors, hours and offers only with clinic approval">الأطباء والساعات والأسعار بموافقة العيادة فقط</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section soft" id="results">
+    <div class="container ba-grid">
+      <div class="ba" id="ba">
+        <svg class="after" viewBox="0 0 400 230" aria-hidden="true">
+          <rect width="400" height="230" fill="#f2d9d4"/>
+          <path d="M0 0h400v80c-50 30-120 46-200 46S50 110 0 80Z" fill="#d98a86"/>
+          <path d="M0 230V150c50-20 120-30 200-30s150 10 200 30v80Z" fill="#c7716c"/>
+          <g fill="#fff" stroke="#e4e9e6" stroke-width="2">
+            <rect x="62" y="104" width="34" height="58" rx="14"/><rect x="98" y="98" width="36" height="66" rx="15"/><rect x="136" y="94" width="38" height="72" rx="16"/><rect x="176" y="92" width="48" height="76" rx="18"/><rect x="226" y="94" width="38" height="72" rx="16"/><rect x="266" y="98" width="36" height="66" rx="15"/><rect x="304" y="104" width="34" height="58" rx="14"/>
+          </g>
+          <g fill="#fff" opacity=".8"><rect x="184" y="100" width="10" height="40" rx="5"/><rect x="144" y="102" width="8" height="32" rx="4"/><rect x="274" y="106" width="8" height="30" rx="4"/></g>
+        </svg>
+        <svg class="before" viewBox="0 0 400 230" aria-hidden="true">
+          <rect width="400" height="230" fill="#ecd0cb"/>
+          <path d="M0 0h400v80c-50 30-120 46-200 46S50 110 0 80Z" fill="#c97b77"/>
+          <path d="M0 230V150c50-20 120-30 200-30s150 10 200 30v80Z" fill="#b5625d"/>
+          <g fill="#e6d49a" stroke="#cdb976" stroke-width="2">
+            <rect x="62" y="110" width="30" height="48" rx="12" transform="rotate(-6 77 134)"/><rect x="100" y="100" width="34" height="62" rx="14" transform="rotate(4 117 131)"/><rect x="141" y="102" width="34" height="66" rx="14" transform="rotate(-5 158 135)"/><rect x="182" y="96" width="40" height="70" rx="15"/><rect x="232" y="100" width="34" height="64" rx="14" transform="rotate(6 249 132)"/><rect x="274" y="108" width="30" height="52" rx="12" transform="rotate(-4 289 134)"/><rect x="312" y="112" width="28" height="44" rx="12" transform="rotate(8 326 134)"/>
+          </g>
+          <circle cx="160" cy="140" r="5" fill="#a98a3e" opacity=".7"/><circle cx="252" cy="130" r="4" fill="#a98a3e" opacity=".7"/>
+        </svg>
+        <span class="ba-tag l" data-ar="قبل (توضيحي)" data-en="Before (illustrative)">قبل (توضيحي)</span>
+        <span class="ba-tag r" data-ar="بعد (توضيحي)" data-en="After (illustrative)">بعد (توضيحي)</span>
+        <div class="ba-handle"></div>
+        <input type="range" min="5" max="95" value="50" id="baRange" aria-label="Before and after comparison">
+      </div>
+      <div class="ba-copy">
+        <div class="eyebrow" data-ar="النتائج" data-en="Results">النتائج</div>
+        <h2 data-ar="اعرض نتائج حقيقية بثقة" data-en="Show real results with confidence">اعرض نتائج حقيقية بثقة</h2>
+        <p data-ar="هذا الشكل يوضح كيف ستظهر الحالات قبل وبعد العلاج. الرسم هنا توضيحي بالكامل وليس حالة مريض." data-en="This shows how before/after cases would appear. The artwork here is fully illustrative — not a real patient.">هذا الشكل يوضح كيف ستظهر الحالات قبل وبعد العلاج. الرسم هنا توضيحي بالكامل وليس حالة مريض.</p>
+        <div class="note" data-ar="الحالات الحقيقية تحتاج موافقة مكتوبة من المريض، والتحقق من اشتراطات الإعلان الصحي قبل النشر." data-en="Real cases need the patient’s written consent, and a check of health-advertising rules before publishing.">الحالات الحقيقية تحتاج موافقة مكتوبة من المريض، والتحقق من اشتراطات الإعلان الصحي قبل النشر.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISHRIFAH -->
+  <section class="section" id="mishrifah">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow" data-ar="فرع مشرفة" data-en="Mishrifah branch">فرع مشرفة</div><h2 data-ar="عيادة أسنان في مشرفة، جدة" data-en="Dental clinic in Mishrifah, Jeddah">عيادة أسنان في مشرفة، جدة</h2></div>
+        <p data-ar="في الموقع الفعلي تكون لهذا الفرع صفحة مستقلة تساعد المرضى في البحث على Google." data-en="In the real site this branch gets its own page, helping patients find you on Google.">في الموقع الفعلي تكون لهذا الفرع صفحة مستقلة تساعد المرضى في البحث على Google.</p>
+      </div>
+      <div class="loc-grid">
+        <div class="map">
+          <svg class="fallback" viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-30 245C125 190 170 270 286 226s153-106 344-72" stroke="#a7cbbd" stroke-width="34" fill="none" stroke-linecap="round"/><path d="M20 75c125 18 144 92 240 72s142-65 350-12" stroke="#fff" stroke-width="13" fill="none" opacity=".75"/><path d="M40 330c148-120 236-64 322-142s99-115 241-138" stroke="#fff" stroke-width="8" fill="none" opacity=".8"/><circle cx="325" cy="192" r="13" fill="#0f6a64" stroke="#fff" stroke-width="7"/></svg>
+          <iframe title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Shar+Medical+Clinic+Mishrifah+Jeddah&output=embed"></iframe>
+        </div>
+        <div class="addr">
+          <h3 data-ar="زيارتنا" data-en="Visit us">زيارتنا</h3>
+          <div class="row"><i>⌖</i><div><span>6895 Prince Majid Rd, Mishrifah, Jeddah</span><br><span class="tbc" data-ar="العنوان من خرائط Google — يؤكَّد من العيادة" data-en="Address from public Maps listing — clinic to confirm">العنوان من خرائط Google — يؤكَّد من العيادة</span></div></div>
+          <div class="row"><i>◷</i><div style="flex:1">
+            <table class="hours"><tbody>
+              <tr><td data-ar="السبت – الخميس" data-en="Saturday – Thursday">السبت – الخميس</td><td>9:00 AM – 10:00 PM</td></tr>
+              <tr><td data-ar="الجمعة" data-en="Friday" >الجمعة</td><td data-ar="مغلق" data-en="Closed">مغلق</td></tr>
+            </tbody></table>
+            <span class="tbc" data-ar="ساعات توضيحية — تؤكَّد من العيادة" data-en="Illustrative hours — clinic to confirm">ساعات توضيحية — تؤكَّد من العيادة</span>
+          </div></div>
+          <div class="row"><i>☎</i><div><a data-tel href="#" dir="ltr">+966 12 000 0000</a><br><span class="tbc" data-ar="رقم توضيحي" data-en="Placeholder number">رقم توضيحي</span></div></div>
+          <div class="btns">
+            <a class="btn btn-primary" href="#book" data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</a>
+            <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shar+Medical+Clinic+Mishrifah+Jeddah" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <b data-ar="تصور موقع أعدّ لعيادة شار الطبية — نموذج توضيحي" data-en="Concept website prepared for Shar Medical Clinic — illustrative demo">تصور موقع أعدّ لعيادة شار الطبية — نموذج توضيحي</b>
+    <span data-ar="ليس موقعاً رسمياً للعيادة. الأطباء والآراء والصور والأرقام والساعات توضيحية حتى تعتمدها العيادة. لا يستخدم هذا النموذج شعار العيادة أو صور مرضاها أو أطبائها." data-en="Not the clinic’s official website. Doctors, reviews, imagery, numbers and hours are illustrative until approved by the clinic. This concept uses no clinic logo, patient or doctor photos.">ليس موقعاً رسمياً للعيادة. الأطباء والآراء والصور والأرقام والساعات توضيحية حتى تعتمدها العيادة. لا يستخدم هذا النموذج شعار العيادة أو صور مرضاها أو أطبائها.</span>
+  </div>
+</footer>
+
+<nav class="sticky-bar" aria-label="Quick actions">
+  <a class="btn btn-primary" href="#book" data-ar="احجز موعدك" data-en="Book Appointment">احجز موعدك</a>
+  <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener" data-ar="واتساب" data-en="WhatsApp">واتساب</a>
+  <a class="btn btn-ghost" data-tel href="#" data-ar="اتصال" data-en="Call">اتصال</a>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---- CONFIG: set before the meeting. Or open index.html?wa=9665XXXXXXXX to test with your own number ---- */
+const CONFIG={
+  whatsapp:(new URLSearchParams(location.search).get('wa')||'966500000000').replace(/\D/g,''),
+  phone:'+966120000000'
+};
+
+let lang='ar';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* ---- data ---- */
+const ICONS={
+  implants:'<path d="M12 3c2.5 0 4.500 1.300 4.500 3.500 0 1.500-.8 2.500-1.500 3.500l-.5 4h-5l-.5-4C8.300 9 7.500 8 7.500 6.500 7.500 4.300 9.500 3 12 3Z"/><path d="M9.500 14h5M10 17h4M10.800 20h2.400"/>',
+  ortho:'<rect x="3" y="8" width="18" height="8" rx="4"/><path d="M8 8v8M12 8v8M16 8v8M3 12h18"/>',
+  pediatric:'<circle cx="12" cy="8" r="4"/><path d="M5 20c.5-4 3.500-6 7-6s6.500 2 7 6"/><path d="M10.500 8h.01M13.500 8h.01"/>',
+  cosmetic:'<path d="M12 3l1.800 4.700L18.500 9.500l-4.700 1.800L12 16l-1.800-4.700L5.500 9.500l4.700-1.800Z"/><path d="M18 16l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/>',
+  rootcanal:'<path d="M7 4c-2 0-3.500 1.500-3.500 3.600 0 1.800.9 3 1.400 4.600.5 1.600.8 4 1.900 5.800.4.700 1.300.7 1.700-.1.500-1.200.5-3 1.100-3.900.4-.6 1.300-.6 1.700 0 .6.900.6 2.700 1.100 3.900.4.800 1.300.8 1.700.1 1.100-1.800 1.400-4.200 1.900-5.800.5-1.600 1.400-2.800 1.400-4.600C20.500 5.500 19 4 17 4c-1.800 0-2.600.9-5 .9S8.800 4 7 4Z"/><path d="M12 8v6"/>'
+};
+const SERVICES=[
+  {k:'implants', ar:'زراعة الأسنان', en:'Dental implants', dar:'استعادة السن المفقود بخطة واضحة.', den:'Replace missing teeth with a clear plan.'},
+  {k:'ortho', ar:'التقويم', en:'Orthodontics', dar:'تقويم تقليدي وشفاف للأطفال والبالغين.', den:'Braces and clear aligners for kids and adults.'},
+  {k:'pediatric', ar:'أسنان الأطفال', en:'Pediatric dentistry', dar:'تجربة هادئة تجعل الطفل مرتاحاً.', den:'A calm experience that puts children at ease.'},
+  {k:'cosmetic', ar:'تجميل الأسنان', en:'Cosmetic dentistry', dar:'ابتسامة طبيعية بعد استشارة صادقة.', den:'A natural smile after an honest consultation.'},
+  {k:'rootcanal', ar:'علاج الجذور', en:'Root canal', dar:'تشخيص دقيق وإنهاء الألم بخطوات مفهومة.', den:'Accurate diagnosis and relief, step by step.'}
+];
+const DOCS=[
+  {k:'implants', ar:'أخصائي زراعة الأسنان', en:'Implant specialist', bar:'زراعة الأسنان والجراحة الفموية', ben:'Implants & oral surgery', col:'#0f6a64'},
+  {k:'ortho', ar:'أخصائي تقويم الأسنان', en:'Orthodontist', bar:'التقويم الثابت والشفاف', ben:'Braces & clear aligners', col:'#7a5ea8'},
+  {k:'pediatric', ar:'طبيب أسنان أطفال', en:'Pediatric dentist', bar:'رعاية الأطفال والمراهقين', ben:'Children & teens', col:'#d0813b'},
+  {k:'cosmetic', ar:'أخصائي تجميل الأسنان', en:'Cosmetic dentist', bar:'الابتسامة والتبييض', ben:'Smile design & whitening', col:'#2d7fa8'},
+  {k:'rootcanal', ar:'أخصائي علاج الجذور', en:'Endodontist', bar:'علاج الجذور وإعادة العلاج', ben:'Root canal & retreatment', col:'#b3584f'}
+];
+const T={
+  ar:{svc:'اختر الخدمة',doc:'اختر الطبيب',when:'اختر الموعد',you:'بياناتك',step:(i,n)=>`الخطوة ${i} من ${n}`,
+    any:'لا تفضيل — الأقرب موعداً',anyS:'نوجّهك للطبيب المناسب',next:'التالي',back:'رجوع',send:'إرسال الطلب عبر واتساب',
+    pickDay:'اليوم',morning:'صباحاً',eve:'مساءً',closed:'مغلق',name:'الاسم',phone:'رقم الجوال',phoneHint:'05XXXXXXXX',
+    eName:'اكتب اسمك',ePhone:'اكتب رقم جوال سعودي صحيح',sum:{svc:'الخدمة',doc:'الطبيب',date:'اليوم',time:'الوقت',name:'الاسم',phone:'الجوال'},
+    note:'نموذج توضيحي: سيفتح واتساب برسالة جاهزة. لا نطلب أي بيانات طبية.',
+    doneT:'جاهز للإرسال',doneP:'فتحنا واتساب برسالة جاهزة. اضغط إرسال هناك لتصل للعيادة، وسيؤكد الفريق الموعد.',again:'طلب جديد',reopen:'فتح واتساب مجدداً',
+    msg:(d)=>`السلام عليكم، أود حجز موعد:\nالخدمة: ${d.svc}\nالطبيب: ${d.doc}\nالتاريخ: ${d.date}\nالوقت: ${d.time}\nالاسم: ${d.name}\nالجوال: ${d.phone}\n(طلب من موقع تجريبي)`,
+    all:'الكل',tbd:'ملف توضيحي',bookDoc:'احجز مع هذا التخصص',langs:'عربي · English',svcGo:'ابدأ الحجز ←',demoNum:'هذا رقم تجريبي — غيّره من الإعدادات قبل العرض',locale:'ar-SA-u-ca-gregory'},
+  en:{svc:'Choose a treatment',doc:'Choose a doctor',when:'Choose a time',you:'Your details',step:(i,n)=>`Step ${i} of ${n}`,
+    any:'No preference — soonest',anyS:'We’ll match the right doctor',next:'Next',back:'Back',send:'Send request on WhatsApp',
+    pickDay:'Day',morning:'Morning',eve:'Evening',closed:'Closed',name:'Name',phone:'Mobile number',phoneHint:'05XXXXXXXX',
+    eName:'Please enter your name',ePhone:'Enter a valid Saudi mobile number',sum:{svc:'Treatment',doc:'Doctor',date:'Day',time:'Time',name:'Name',phone:'Mobile'},
+    note:'Demo: opens WhatsApp with a ready message. No medical details are collected.',
+    doneT:'Ready to send',doneP:'We opened WhatsApp with a ready message. Tap send there to reach the clinic; the team will confirm your slot.',again:'New request',reopen:'Open WhatsApp again',
+    msg:(d)=>`Hello, I’d like to book an appointment:\nTreatment: ${d.svc}\nDoctor: ${d.doc}\nDate: ${d.date}\nTime: ${d.time}\nName: ${d.name}\nMobile: ${d.phone}\n(Request from demo website)`,
+    all:'All',tbd:'Illustrative profile',bookDoc:'Book this specialty',langs:'Arabic · English',svcGo:'Start booking →',demoNum:'Demo number — change it in CONFIG before presenting',locale:'en-GB'}
+};
+const SLOTS=['09:00','10:30','12:00','16:00','17:30','19:00','20:30','21:15'];
+
+/* ---- wizard state ---- */
+const S={step:1,svc:null,doc:'any',date:null,time:null,name:'',phone:'',done:false,waUrl:''};
+const sName=(arr,k)=>{const o=arr.find(x=>x.k===k);return o?o[lang]:''};
+function days(){
+  const out=[];const d=new Date();d.setHours(12,0,0,0);
+  for(let i=1;out.length<8;i++){const x=new Date(d);x.setDate(d.getDate()+i);out.push(x)}
+  return out;
+}
+const isFri=d=>d.getDay()===5;
+function hashFull(d,s){let h=0;const str=d.toDateString()+s;for(const c of str)h=(h*31+c.charCodeAt(0))>>>0;return h%5===0}
+const fmtDay=d=>d.toLocaleDateString(T[lang].locale,{weekday:'long',day:'numeric',month:'long'});
+const dayParts=d=>({w:d.toLocaleDateString(T[lang].locale,{weekday:'short'}),n:d.toLocaleDateString(T[lang].locale,{day:'numeric'})});
+
+function render(){
+  const t=T[lang],w=$('#wizard');
+  const prog=`<div class="w-prog">${[1,2,3,4].map(i=>`<b class="${S.step>=i||S.done?'on':''}"></b>`).join('')}</div>`;
+  if(S.done){
+    w.innerHTML=`${prog}<div class="w-done"><div class="check">✓</div><h3 class="w-title">${t.doneT}</h3><p>${t.doneP}</p><div class="hero-actions" style="justify-content:center"><a class="btn btn-wa" href="${S.waUrl}" target="_blank" rel="noopener">${t.reopen}</a><button class="btn btn-ghost" id="again" type="button">${t.again}</button></div></div>`;
+    $('#again').onclick=()=>{Object.assign(S,{step:1,svc:null,doc:'any',date:null,time:null,done:false});render()};
+    return;
+  }
+  let body='',valid=false;
+  if(S.step===1){
+    body=`<h3 class="w-title">${t.svc}</h3><div class="opt-grid">${SERVICES.map(s=>`<button type="button" class="opt" data-svc="${s.k}" aria-pressed="${S.svc===s.k}"><span class="dot"></span><span>${s[lang]}</span></button>`).join('')}</div>`;
+    valid=!!S.svc;
+  }else if(S.step===2){
+    const list=DOCS.filter(d=>d.k===S.svc);
+    body=`<h3 class="w-title">${t.doc}</h3><div class="opt-grid" style="grid-template-columns:1fr">${[{k:'any',ar:t.any,en:t.any,sub:t.anyS}].concat(list.map(d=>({k:d.k,ar:d.ar,en:d.en,sub:`${lang==='ar'?d.bar:d.ben} · ${t.tbd}`}))).map(o=>`<button type="button" class="opt" data-doc="${o.k}" aria-pressed="${S.doc===o.k}"><span class="dot"></span><span>${o.k==='any'?o.ar:o[lang]}<small>${o.sub}</small></span></button>`).join('')}</div>`;
+    valid=true;
+  }else if(S.step===3){
+    const ds=days();
+    body=`<h3 class="w-title">${t.when}</h3><div class="days" role="group" aria-label="${t.pickDay}">${ds.map((d,i)=>{const p=dayParts(d);const c=isFri(d);return `<button type="button" class="day" data-day="${i}" aria-pressed="${S.date&&S.date.toDateString()===d.toDateString()}" ${c?'disabled':''}>${p.w}<b>${p.n}</b>${c?`<small>${t.closed}</small>`:''}</button>`}).join('')}</div>`;
+    if(S.date){
+      const mk=arr=>arr.map(s=>{const f=hashFull(S.date,s);return `<button type="button" class="slot" data-slot="${s}" aria-pressed="${S.time===s}" ${f?'disabled':''}>${s}</button>`}).join('');
+      body+=`<div class="slot-title">${t.morning}</div><div class="slots">${mk(SLOTS.slice(0,3))}</div><div class="slot-title">${t.eve}</div><div class="slots">${mk(SLOTS.slice(3))}</div>`;
+    }
+    valid=!!(S.date&&S.time);
+  }else{
+    body=`<h3 class="w-title">${t.you}</h3>
+    <div class="summary">${[['svc',sName(SERVICES,S.svc)],['doc',S.doc==='any'?t.any:sName(DOCS,S.doc)],['date',fmtDay(S.date)],['time',S.time]].map(([k,v])=>`<div><span>${t.sum[k]}</span><b>${v}</b></div>`).join('')}</div>
+    <div class="fields"><div class="field"><label for="fName">${t.name}</label><input id="fName" autocomplete="name" value="${S.name.replace(/"/g,'&quot;')}"><div class="err" id="eName"></div></div>
+    <div class="field"><label for="fPhone">${t.phone}</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="${t.phoneHint}" value="${S.phone}"><div class="err" id="ePhone"></div></div></div>`;
+    valid=true;
+  }
+  const nav=S.step<4
+    ?`<div class="w-nav">${S.step>1?`<button class="btn btn-ghost" type="button" id="back">${t.back}</button>`:'<span></span>'}<button class="btn btn-primary" type="button" id="next" ${valid?'':'disabled'}>${t.next}</button></div>`
+    :`<div class="w-nav"><button class="btn btn-ghost" type="button" id="back">${t.back}</button><button class="btn btn-wa" type="button" id="send">${t.send}</button></div><p class="w-note">${t.note}</p>`;
+  w.innerHTML=`${prog}<div class="w-step-label">${t.step(S.step,4)}</div>${body}${nav}`;
+  bindWizard();
+}
+function bindWizard(){
+  $$('[data-svc]').forEach(b=>b.onclick=()=>{S.svc=b.dataset.svc;S.doc='any';render();focusNext()});
+  $$('[data-doc]').forEach(b=>b.onclick=()=>{S.doc=b.dataset.doc;render();focusNext()});
+  $$('[data-day]').forEach(b=>b.onclick=()=>{S.date=days()[+b.dataset.day];S.time=null;render()});
+  $$('[data-slot]').forEach(b=>b.onclick=()=>{S.time=b.dataset.slot;render();focusNext()});
+  const nx=$('#next');if(nx)nx.onclick=()=>{if(S.step===1&&S.svc&&!DOCS.some(d=>d.k===S.svc))S.step++;S.step++;render();scrollWiz()};
+  const bk=$('#back');if(bk)bk.onclick=()=>{S.step--;render()};
+  const sd=$('#send');if(sd)sd.onclick=submit;
+  const fn=$('#fName'),fp=$('#fPhone');
+  if(fn){fn.oninput=()=>{S.name=fn.value;fn.removeAttribute('aria-invalid')};fp.oninput=()=>{S.phone=fp.value;fp.removeAttribute('aria-invalid')}}
+}
+function focusNext(){const n=$('#next');if(n&&!n.disabled)n.focus({preventScroll:true})}
+function scrollWiz(){const r=$('#wizard').getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)$('#wizard').scrollIntoView({behavior:'smooth',block:'start'})}
+function normPhone(p){p=p.replace(/[\s\-()]/g,'').replace(/[٠-٩]/g,c=>'٠١٢٣٤٥٦٧٨٩'.indexOf(c));return /^(05\d{8}|\+?9665\d{8}|009665\d{8})$/.test(p)?p:null}
+function submit(){
+  const t=T[lang];let ok=true;
+  const fn=$('#fName'),fp=$('#fPhone');
+  S.name=fn.value.trim();S.phone=fp.value.trim();
+  if(S.name.length<2){fn.setAttribute('aria-invalid','true');$('#eName').textContent=t.eName;ok=false}else $('#eName').textContent='';
+  const ph=normPhone(S.phone);
+  if(!ph){fp.setAttribute('aria-invalid','true');$('#ePhone').textContent=t.ePhone;ok=false}else $('#ePhone').textContent='';
+  if(!ok){(fn.getAttribute('aria-invalid')?fn:fp).focus();return}
+  const text=t.msg({svc:sName(SERVICES,S.svc),doc:S.doc==='any'?t.any:sName(DOCS,S.doc),date:fmtDay(S.date),time:S.time,name:S.name,phone:ph});
+  S.waUrl=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+  S.done=true;render();
+  window.open(S.waUrl,'_blank','noopener');
+  if(CONFIG.whatsapp==='966500000000')toast(t.demoNum);
+}
+
+/* ---- services / doctors ---- */
+function renderServices(){
+  $('#serviceCards').innerHTML=SERVICES.map(s=>`<button type="button" class="service" data-start="${s.k}"><span class="s-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0f6a64" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[s.k]}</svg></span><h3>${s[lang]}</h3><p>${lang==='ar'?s.dar:s.den}</p><span class="go">${T[lang].svcGo}</span></button>`).join('');
+  $$('[data-start]').forEach(b=>b.onclick=()=>startBooking(b.dataset.start));
+}
+let docFilter='all';
+function renderDocs(){
+  const t=T[lang];
+  $('#docChips').innerHTML=[{k:'all',ar:t.all,en:t.all}].concat(DOCS).map(d=>`<button type="button" class="chip" data-f="${d.k}" aria-pressed="${docFilter===d.k}">${d.k==='all'?t.all:sName(SERVICES,d.k)}</button>`).join('');
+  $('#docCards').innerHTML=DOCS.map(d=>`<article class="doctor" ${docFilter!=='all'&&docFilter!==d.k?'hidden':''}>
+    <div class="avatar"><svg viewBox="0 0 84 84" aria-hidden="true"><rect width="84" height="84" fill="${d.col}" opacity=".14"/><circle cx="42" cy="32" r="14" fill="#f2d3b8"/><path d="M14 84c2-20 14-30 28-30s26 10 28 30Z" fill="${d.col}"/><path d="M34 54l8 10 8-10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+    <span class="badge">${t.tbd}</span><h3>${d[lang]}</h3><p>${lang==='ar'?d.bar:d.ben}</p><span class="meta">${t.langs}</span>
+    <button class="btn btn-ghost" type="button" data-bookdoc="${d.k}">${t.bookDoc}</button></article>`).join('');
+  $$('[data-f]').forEach(b=>b.onclick=()=>{docFilter=b.dataset.f;renderDocs()});
+  $$('[data-bookdoc]').forEach(b=>b.onclick=()=>startBooking(b.dataset.bookdoc,b.dataset.bookdoc));
+}
+function startBooking(svc,doc){
+  Object.assign(S,{svc,doc:doc||'any',step:2,date:null,time:null,done:false});
+  render();$('#book').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ---- language, links, misc ---- */
+function applyLang(){
+  document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  $$('[data-ar]').forEach(el=>{el.innerHTML=el.getAttribute('data-'+lang)});
+  $('#langBtn').textContent=lang==='ar'?'EN':'العربية';
+  $('#langBtn').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');
+  document.title=lang==='ar'?'عيادة شار الطبية — نموذج توضيحي':'Shar Medical Clinic — Concept Demo';
+  try{localStorage.setItem('lang',lang)}catch(e){}
+  renderServices();renderDocs();render();wireLinks();
+}
+function wireLinks(){
+  const wa=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lang==='ar'?'السلام عليكم، أود الاستفسار عن حجز موعد.':'Hello, I’d like to ask about booking an appointment.')}`;
+  $$('[data-wa]').forEach(a=>a.href=wa);
+  $$('[data-tel]').forEach(a=>a.href='tel:'+CONFIG.phone);
+}
+let tt;function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),4200)}
+$('#langBtn').onclick=()=>{lang=lang==='ar'?'en':'ar';applyLang()};
+$('#menuBtn').onclick=()=>{const o=$('#navLinks').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o)};
+$$('#navLinks a').forEach(a=>a.onclick=()=>{$('#navLinks').classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#navLinks').classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false')}});
+const baR=$('#baRange');baR.oninput=()=>$('#ba').style.setProperty('--pos',baR.value+'%');
+try{const l=localStorage.getItem('lang');if(l==='en')lang='en'}catch(e){}
+applyLang();
+</script>
+</body>
+</html>
